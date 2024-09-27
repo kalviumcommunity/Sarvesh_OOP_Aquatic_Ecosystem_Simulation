@@ -1,16 +1,16 @@
 public class Fish {
 
-
     private String name;
     private double size; 
     private String dietType;
     private String location;
-
+    public static int totalFish = 0;
     public Fish(String name, double size, String dietType, String location) {
         this.name = name;
         this.size = size;
         this.dietType = dietType;
         this.location = location;
+        totalFish++;
     }
 
     public void move() {
@@ -22,7 +22,7 @@ public class Fish {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -52,4 +52,8 @@ public class Fish {
 	public void setLocation(String location) {
 		this.location = location;
 	}
+
+    public static int getTotalFish() {
+        return totalFish;
+    }
 }

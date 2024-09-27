@@ -1,10 +1,11 @@
 public class Plant {
     private String type;
     private String location;
-
+    public static int totalPlants = 0;
     public Plant(String type, String location) {
         this.type = type;
         this.location = location;
+        totalPlants++;
     }
 
     public void grow() {
@@ -29,5 +30,9 @@ public class Plant {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public static int getTotalPlants() {
+        return totalPlants;
     }
 }
