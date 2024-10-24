@@ -9,7 +9,7 @@ public class AquaticEcoSystem {
       System.out.println("Total Fish: " + Fish.totalFish);
       new Fish("Tuna", 3.5, "Small Fish", "Deep Sea");
       Plant var4 = new Plant("Seaweed", "Coral Reef");
-      System.out.println("Total Fish: " + Plant.getTotalPlants());
+      System.out.println("Total Plants: " + Plant.getTotalPlants());
       Plant var5 = new Plant("Algae", "Shallow Waters");
       System.out.println("Total Fish: " + Fish.totalFish);
       new Plant("Kelp", "Shallow Waters");
@@ -45,8 +45,8 @@ public class AquaticEcoSystem {
       var4.spread();
       var5.grow();
       var5.spread();
-      
-      
+      var1.setName("Great White Shark");
+      System.out.println(var1.getName() + " is " + var1.getSize() + " inches long.");
       System.out.println("Total Fish: " + Fish.getTotalFish());
       System.out.println("Total Plant: " + Plant.getTotalPlants());
    }
