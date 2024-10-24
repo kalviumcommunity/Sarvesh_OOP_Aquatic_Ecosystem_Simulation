@@ -5,6 +5,15 @@ public class Fish extends AquaticEntity {
     private String dietType;    
     public static int totalFish = 0;
 
+    public Fish() {
+        super();
+        this.name = "Unnamed";
+        this.size = 0;
+        this.dietType = "Unknown";
+        totalFish++;
+        System.out.println("Fish default constructor called.");
+    }
+
     public Fish(String name, double size, String dietType, String location) {
         super(location);
         this.name = name;
