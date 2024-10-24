@@ -3,6 +3,14 @@ public class Plant extends AquaticEntity {
     private String type;
     public static int totalPlants = 0;
 
+
+    public Plant() {
+        super();
+        this.type = "Unknown";
+        totalPlants++;
+        System.out.println("Plant default constructor called.");
+    }
+
     public Plant(String type, String location) {
         super(location);
         this.type = type;
