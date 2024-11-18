@@ -1,8 +1,6 @@
 public class Plant extends AquaticEntity {
-
     private String type;
     public static int totalPlants = 0;
-
 
     public Plant() {
         super();
@@ -25,19 +23,12 @@ public class Plant extends AquaticEntity {
         System.out.println(type + " is spreading to a new area in the " + getLocation() + ".");
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
+    @Override
+    public void display() {
+        System.out.println("Plant Type: " + type + ", Location: " + getLocation());
     }
 
     public static int getTotalPlants() {
         return totalPlants;
-    }
-    @Override
-    public void display() {
-        System.out.println("Plant Type: " + type + ", Location: " + getLocation());
     }
 }

@@ -1,5 +1,5 @@
 public abstract class AquaticEntity {
-
+    
     private String location;
 
     public AquaticEntity() {

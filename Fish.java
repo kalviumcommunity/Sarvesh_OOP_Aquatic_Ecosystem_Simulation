@@ -1,5 +1,4 @@
 public class Fish extends AquaticEntity {
-
     private String name;
     private double size; 
     private String dietType;    
@@ -34,31 +33,6 @@ public class Fish extends AquaticEntity {
     public void feed() {
         System.out.println(name + " is feeding on " + dietType + ".");
     }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-	public double getSize() {
-		return size;
-	}
-
-	public void setSize(double size) {
-		this.size = size;
-	}
-
-	public String getDietType() {
-		return dietType;
-	}
-
-	public void setDietType(String dietType) {
-		this.dietType = dietType;
-	}
-
 
     public static int getTotalFish() {
         return totalFish;
