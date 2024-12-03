@@ -20,18 +20,18 @@ public class Fish extends AquaticEntity {
         totalFish++;
     }
 
-    // Method Overloading: move()
-    public void move() {
-        System.out.println(name + " is swimming in the " + getLocation() + ".");
+    public String getName() {
+        return name;
     }
 
-    public void move(String direction) {
-        System.out.println(name + " is swimming " + direction + " in the " + getLocation() + ".");
+    public double getSize() {
+        return size;
     }
 
-    public void move(String direction, double speed) {
-        System.out.println(name + " is swimming " + direction + " at " + speed + " mph in the " + getLocation() + ".");
+    public String getDietType() {
+        return dietType;
     }
+
 
     @Override
     public void display() {
