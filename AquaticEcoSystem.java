@@ -1,28 +1,33 @@
 public class AquaticEcoSystem {
-   public static void main(String[] args) {
-       // Fish and Shark
-       Fish fish1 = new Fish("Clownfish", 5.0, "Algae and Plankton", "Coral Reef");
-       fish1.display();
-       fish1.move();
-       fish1.feed();
+    public static void main(String[] args) {
+        // Create instances
+        Fish fish1 = new Fish("Clownfish", 5.0, "Algae and Plankton", "Coral Reef");
+        Plant plant1 = new Plant("Seaweed", "Shallow Waters");
 
-       Shark shark1 = new Shark("Great White Shark", 1500.0, "Seals", "Ocean", 35.0);
-       shark1.display();
-       shark1.move();
-       shark1.hunt();
+        Shark shark1 = new Shark("Great White Shark", 1500.0, "Seals", "Ocean", 35.0);
 
-       // Plant and Algae
-       Plant plant1 = new Plant("Seaweed", "Shallow Waters");
-       plant1.display();
-       plant1.grow();
-       plant1.spread();
+        // Services
+        FishActions fishActions = new FishActions();
+        PlantActions plantActions = new PlantActions();
+        DisplayService displayService = new DisplayService();
 
-       Algae algae1 = new Algae("Green Algae", "Pond", true);
-       algae1.display();
-       algae1.photosynthesize();
+        // Fish operations
+        displayService.display(fish1);
+        fishActions.move(fish1);
+        fishActions.feed(fish1);
 
-       // Totals
-       System.out.println("Total Fish: " + Fish.getTotalFish());
-       System.out.println("Total Plants: " + Plant.getTotalPlants());
-   }
+        // Plant operations
+        displayService.display(plant1);
+        plantActions.grow(plant1);
+        plantActions.spread(plant1);
+
+        // Shark operations
+        displayService.display(shark1);
+        fishActions.move(shark1, "forward", 20);
+        shark1.hunt();
+
+        // Totals
+        System.out.println("Total Fish: " + Fish.getTotalFish());
+        System.out.println("Total Plants: " + Plant.getTotalPlants());
+    }
 }
