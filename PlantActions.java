@@ -1,9 +1,9 @@
 public class PlantActions {
-    public void grow(Plant plant) {
-        System.out.println(plant.getType() + " is growing in the " + plant.getLocation() + ".");
+    public void grow(String location) {
+        System.out.println("The plant is growing in the " + location + ".");
     }
 
-    public void spread(Plant plant) {
-        System.out.println(plant.getType() + " is spreading to a new area in the " + plant.getLocation() + ".");
+    public void photosynthesize(String location) {
+        System.out.println("The plant is photosynthesizing in the " + location + ".");
     }
 }

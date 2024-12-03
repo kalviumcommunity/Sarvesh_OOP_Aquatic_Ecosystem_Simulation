@@ -1,48 +1,25 @@
 public class Fish extends AquaticEntity {
     private String name;
-    private double size;
     private String dietType;
-    public static int totalFish = 0;
+    private FishActions actions; // Using actions class
 
-    public Fish() {
-        super();
-        this.name = "Unnamed";
-        this.size = 0;
-        this.dietType = "Unknown";
-        totalFish++;
-    }
-
-    public Fish(String name, double size, String dietType, String location) {
+    public Fish(String name, String location, String dietType) {
         super(location);
         this.name = name;
-        this.size = size;
         this.dietType = dietType;
-        totalFish++;
+        this.actions = new FishActions();
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public double getSize() {
-        return size;
-    }
-
-    public String getDietType() {
-        return dietType;
-    }
-
 
     @Override
     public void display() {
         System.out.println("Fish Name: " + name + ", Location: " + getLocation());
     }
 
-    public void feed() {
-        System.out.println(name + " is feeding on " + dietType + ".");
+    public void swim() {
+        actions.swim(getLocation()); 
     }
 
-    public static int getTotalFish() {
-        return totalFish;
+    public void feed() {
+        actions.feed(dietType);
     }
 }
