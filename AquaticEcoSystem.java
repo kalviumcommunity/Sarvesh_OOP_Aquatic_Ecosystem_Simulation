@@ -1,33 +1,24 @@
 public class AquaticEcoSystem {
     public static void main(String[] args) {
-        // Create instances
-        Fish fish1 = new Fish("Clownfish", 5.0, "Algae and Plankton", "Coral Reef");
-        Plant plant1 = new Plant("Seaweed", "Shallow Waters");
 
-        Shark shark1 = new Shark("Great White Shark", 1500.0, "Seals", "Ocean", 35.0);
+        Fish fish = new Fish("Clownfish", 5.0, "Algae and Plankton", "Coral Reef");
+        Plant plant = new Plant("Seaweed", "Shallow Waters");
 
-        // Services
-        FishActions fishActions = new FishActions();
-        PlantActions plantActions = new PlantActions();
-        DisplayService displayService = new DisplayService();
+        AquaticAction swimAction = new SwimAction("forward", 10);
+        AquaticAction feedAction = new FeedAction("Plankton");
+        AquaticAction growAction = new GrowAction();
 
-        // Fish operations
-        displayService.display(fish1);
-        fishActions.move(fish1);
-        fishActions.feed(fish1);
+        swimAction.perform(fish);
+        feedAction.perform(fish);
+        growAction.perform(plant);
 
-        // Plant operations
-        displayService.display(plant1);
-        plantActions.grow(plant1);
-        plantActions.spread(plant1);
+        AquaticAction spreadAction = new AquaticAction() {
+            @Override
+            public void perform(AquaticEntity entity) {
+                System.out.println(entity.getClass().getSimpleName() + " is spreading in the " + entity.getLocation() + ".");
+            }
+        };
 
-        // Shark operations
-        displayService.display(shark1);
-        fishActions.move(shark1, "forward", 20);
-        shark1.hunt();
-
-        // Totals
-        System.out.println("Total Fish: " + Fish.getTotalFish());
-        System.out.println("Total Plants: " + Plant.getTotalPlants());
+        spreadAction.perform(plant);
     }
 }
